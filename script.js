@@ -12,9 +12,16 @@ document.getElementById('no').addEventListener('mousemove',function(e){
 // console x and y all
 let elems = document.getElementsByClassName('flex-item');
 console.log(elems);
-    for(elem of elems){
+    for(let elem of elems){
         elem.addEventListener('mousemove',function(e){
         console.log('x : '+e.screenX+' y : '+e.screenY);
-    });
+        });
+        // console x and y all
+        elem.addEventListener('click',function(e){
+        alert(elem.innerText);
+
+        });
 }
+
+
 
