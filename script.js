@@ -58,12 +58,15 @@ document.getElementById('no').addEventListener('dblclick',function(e){
 })
 
 function onOkClicked(e){
+    e.stopPropagation();
     alert(' Ok Clicked')
 }
 function onCancelClicked(e){
+    e.stopPropagation();
     alert(' Cancel Clicked')
 }
 function onNoClicked(e){
+    e.stopPropagation();
     alert(' No Clicked')
 }
 document.getElementById('cancel').addEventListener('click',onCancelClicked)
