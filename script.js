@@ -60,33 +60,44 @@ document.getElementById('no').addEventListener('dblclick',function(e){
 let output =''
 let outputElements = document.getElementById('output')
 
-function onOkClicked(e){
-    e.stopPropagation();
-    // alert(' Ok Clicked')
-    addText('Ok');
-}
-function onCancelClicked(e){
-    e.stopPropagation();
-    // alert(' Cancel Clicked')
-    addText('Cancel');
-}
-function onNoClicked(e){
-    e.stopPropagation();
-    // alert(' No Clicked')
-    addText('No');
-}
+// function onOkClicked(e){
+//     e.stopPropagation();
+//     // alert(' Ok Clicked')
+//     addText('Ok');
+// }
+// function onCancelClicked(e){
+//     e.stopPropagation();
+//     // alert(' Cancel Clicked')
+//     addText('Cancel');
+// }
+// function onNoClicked(e){
+//     // alert(' No Clicked')
+//     addText('No');
+// }
 function addText (input){
     output += input+'\n';
     outputElements.innerText=output;
 }
 
 document.getElementById('container').onclick = function(){
-    output = ' ';
+    output = '';
     outputElements.innerText=output;
 }
 
-document.getElementById('cancel').addEventListener('click',onCancelClicked)
-document.getElementById('no').onclick = onNoClicked;
+// document.getElementById('cancel').addEventListener('click',onCancelClicked)
+// document.getElementById('no').onclick = onNoClicked;
+
+let keyword = {
+    'OK' : 'Ok',
+    'cancel' : 'Cancel',
+    'NO' : 'No',
+}
+for(let elem of elems){
+    elem.addEventListener('click',function(e){
+        e.stopPropagation();
+        addText(keyword[elem.innerText])
+    });
+}
 
 // document.getElementById('container').onclick = function(e){
 //     alert('container clicked');
