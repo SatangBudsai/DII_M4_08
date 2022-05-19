@@ -13,4 +13,4 @@ function addText (){
     newButton.innerText =text
     output.appendChild(newButton)
 }
-searchButton.addEventListener('click',addText)
+inputText.addEventListener('blur',addText)
