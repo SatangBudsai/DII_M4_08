@@ -57,21 +57,37 @@ document.getElementById('no').addEventListener('dblclick',function(e){
     okButton.innerText = showText[showIndex]
 })
 
+let output =''
+let outputElements = document.getElementById('output')
+
 function onOkClicked(e){
     e.stopPropagation();
-    alert(' Ok Clicked')
+    // alert(' Ok Clicked')
+    addText('Ok');
 }
 function onCancelClicked(e){
     e.stopPropagation();
-    alert(' Cancel Clicked')
+    // alert(' Cancel Clicked')
+    addText('Cancel');
 }
 function onNoClicked(e){
     e.stopPropagation();
-    alert(' No Clicked')
+    // alert(' No Clicked')
+    addText('No');
 }
+function addText (input){
+    output += input+'\n';
+    outputElements.innerText=output;
+}
+
+document.getElementById('container').onclick = function(){
+    output = ' ';
+    outputElements.innerText=output;
+}
+
 document.getElementById('cancel').addEventListener('click',onCancelClicked)
 document.getElementById('no').onclick = onNoClicked;
 
-document.getElementById('container').onclick = function(e){
-    alert('container clicked');
-}
+// document.getElementById('container').onclick = function(e){
+//     alert('container clicked');
+// }
