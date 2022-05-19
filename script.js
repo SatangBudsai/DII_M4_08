@@ -36,13 +36,13 @@ document.getElementById('ok').addEventListener('click',function(e){
 var borderTick = 10;
 document.getElementById('cancel').style.border = `${borderTick}px solid white` ;
 
-let margin =20;
-document.getElementById('ok').addEventListener('click',function(e){
-    margin += 5;
-    var marginSize =`20px ${margin}px`;
-    document.getElementById('cancel').style.margin =marginSize;
-    document.getElementById('no').style.margin =marginSize;
-});
+// let margin =20;
+// document.getElementById('ok').addEventListener('click',function(e){
+//     margin += 5;
+//     var marginSize =`20px ${margin}px`;
+//     document.getElementById('cancel').style.margin =marginSize;
+//     document.getElementById('no').style.margin =marginSize;
+// });
 
 
 let showText = ['ok','วิชานี้','ง่าย','จริง ๆ นะจ๊ะ'];
@@ -60,20 +60,6 @@ document.getElementById('no').addEventListener('dblclick',function(e){
 let output =''
 let outputElements = document.getElementById('output')
 
-// function onOkClicked(e){
-//     e.stopPropagation();
-//     // alert(' Ok Clicked')
-//     addText('Ok');
-// }
-// function onCancelClicked(e){
-//     e.stopPropagation();
-//     // alert(' Cancel Clicked')
-//     addText('Cancel');
-// }
-// function onNoClicked(e){
-//     // alert(' No Clicked')
-//     addText('No');
-// }
 function addText (input){
     output += input+'\n';
     outputElements.innerText=output;
@@ -83,9 +69,6 @@ document.getElementById('container').onclick = function(){
     output = '';
     outputElements.innerText=output;
 }
-
-// document.getElementById('cancel').addEventListener('click',onCancelClicked)
-// document.getElementById('no').onclick = onNoClicked;
 
 let keyword = {
     'OK' : 'Ok',
@@ -99,6 +82,16 @@ for(let elem of elems){
     });
 }
 
-// document.getElementById('container').onclick = function(e){
-//     alert('container clicked');
-// }
+document.getElementById('ok').addEventListener('click',addNode)
+
+let outputContainer = document.getElementById('output-container')
+let counter =0;
+function addNode(){
+        newNode = document.createElement('div');
+        newNode.classList.add('flex-item')
+        newNode.setAttribute('id',counter)
+        newNode.innerText = counter;
+        counter = counter+1;
+        newNode.innerText = counter;
+        outputContainer.appendChild(newNode)
+}
