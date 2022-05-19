@@ -27,3 +27,9 @@
     color: black;
     border: 2px solid gray;
 }
+.toggleOn{
+    background-color: white;
+}
+.toggleOff{
+    background-color: darkgray;
+}

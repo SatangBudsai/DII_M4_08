@@ -22,6 +22,9 @@ console.log(elems);
 
         });
 }
-
+document.getElementById('ok').addEventListener('click',function(e){
+    document.getElementById('no').classList.add('toggleOn');
+    console.log(document.getElementById('no'));
+})
 
 
