@@ -56,3 +56,15 @@ document.getElementById('no').addEventListener('dblclick',function(e){
     const okButton = document.getElementById('ok')
     okButton.innerText = showText[showIndex]
 })
+
+function onOkClicked(e){
+    alert(' Ok Clicked')
+}
+function onCancelClicked(e){
+    alert(' Cancel Clicked')
+}
+function onNoClicked(e){
+    alert(' No Clicked')
+}
+document.getElementById('cancel').addEventListener('click',onCancelClicked)
+document.getElementById('no').onclick = onNoClicked;
