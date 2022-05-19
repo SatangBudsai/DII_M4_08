@@ -23,8 +23,14 @@ console.log(elems);
         });
 }
 document.getElementById('ok').addEventListener('click',function(e){
-    document.getElementById('no').classList.add('toggleOn');
-    console.log(document.getElementById('no'));
+    let noElement = document.getElementById('no')
+    if(noElement.classList.contains('toggleOn')){
+        noElement.classList.replace('toggleOn','toggleOff')
+    } else if (noElement.classList.contains('toggleOff')) {
+        noElement.classList.replace('toggleOff','toggleOn')
+    }else {
+        noElement.classList.add('toggleOn')
+    }
 })
 
 
