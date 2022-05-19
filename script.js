@@ -68,3 +68,7 @@ function onNoClicked(e){
 }
 document.getElementById('cancel').addEventListener('click',onCancelClicked)
 document.getElementById('no').onclick = onNoClicked;
+
+document.getElementById('container').onclick = function(e){
+    alert('container clicked');
+}
